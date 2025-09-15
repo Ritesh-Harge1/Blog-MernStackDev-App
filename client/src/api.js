@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: 'https://blog-mernstackdev-app-server.onrender.com',
+  baseURL: 'https://blog-mernstackdev-app-server.onrender.com';
 });
 
 // Attach token for protected routes
