@@ -1,8 +1,8 @@
 import axios from "axios";
+const API = 'https://blog-mernstackdev-app-server.onrender.com/api';
 
-const api = axios.create({
-  baseURL: 'https://blog-mernstackdev-app-server.onrender.com';
-});
+export const api = axios.create({ baseURL: API })
+
 
 // Attach token for protected routes
 api.interceptors.request.use((config) => {
