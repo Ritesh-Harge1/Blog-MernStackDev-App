@@ -21,15 +21,15 @@ app.use("/api/posts", postRoutes);
 
 // DB + Server
 const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI;
+const DB_URI = process.env.DB_URI;
 
-if (!MONGO_URI) {
+if (!DB_URI) {
   console.error("Missing MONGO_URI in environment");
   process.exit(1);
 }
 
 mongoose
-  .connect(MONGO_URI, { dbName: undefined })
+  .connect(DB_URI, { dbName: "blog_app" })
   .then(() => {
     console.log("MongoDB connected");
     app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
